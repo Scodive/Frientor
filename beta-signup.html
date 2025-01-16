@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join BETA - StudentAI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="window.location.href='/'">DISCOVER<br>STUDENTAI</div>
+            <div class="nav-buttons">
+                <button class="btn demo-btn" onclick="window.location.href='/'">Demo</button>
+                <button class="btn faq-btn">FAQ</button>
+                <button class="btn learn-more-btn">Learn more</button>
+                <button class="btn btn-primary join-beta">Join BETA</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <h1>Join StudentAI BETA</h1>
+        <form id="betaForm" class="beta-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Email Input</label>
+                    <input type="email" name="email" placeholder="your@email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Function Selection</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="functions" value="study_plan">
+                            Study Plan
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="functions" value="ai_tutor">
+                            AI Tutor
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="functions" value="essay_assistant">
+                            Essay Assistant
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="functions" value="exam_prep">
+                            Exam Preparation
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="text" name="dob" placeholder="MM/DD/YYYY" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nationality</label>
+                    <select name="nationality" required>
+                        <option value="">Select Country</option>
+                        <option value="CN">China</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="JP">Japan</option>
+                        <option value="KR">South Korea</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="gender" value="male">
+                            Male
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="gender" value="prefer_not">
+                            Prefer not to disclose
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary confirm-btn">Confirm</button>
+        </form>
+    </div>
+
+    <div class="steps-container">
+        <h2 class="steps-title">Discover the possibilities</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <img src="assets/images/step1.jpg" alt="Step 1">
+                <h3>Step 1</h3>
+                <p>Input your email. Stay connected to receive updates and tips.</p>
+            </div>
+            <div class="step-card">
+                <img src="assets/images/step2.jpg" alt="Step 2">
+                <h3>Step 2</h3>
+                <p>Choose your desired features. Enhance your student experience with personalized AI tools.</p>
+            </div>
+            <div class="step-card">
+                <img src="assets/images/step3.jpg" alt="Step 3">
+                <h3>Step 3</h3>
+                <p>Enjoy the benefits. Let AI streamline your tasks and boost your academic performance.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/beta-form.js"></script>
+</body>
+</html> 
