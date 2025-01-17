@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DISCOVER STUDENTAI</title>
+    <title>DISCOVER FRIENDTOR</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 </head>
 <body>
+    <div class="video-section">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="assets/videos/newdemp.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="gradient-overlay"></div>
+    </div>
+
     <header>
         <nav class="navbar">
-            <div class="logo">DISCOVER<br>STUDENTAI</div>
+            <div class="logo">DISCOVER<br>FRIENDTOR</div>
             <div class="nav-buttons">
                 <button class="btn faq-btn">FAQ</button>
                 <button class="btn learn-more-btn">Learn more</button>
@@ -21,14 +33,13 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <div class="video-container">
-                    <video autoplay loop muted playsinline preload="auto">
-                        <source src="assets/videos/newdemp.mp4" type="video/mp4">
-                    </video>
+                <h1 id="typewriter" class="typewriter">The Next Generation of AI Agent</h1>
+                <div class="chat-container">
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Chat with Friendtor...">
+                        <button id="sendButton" class="btn btn-primary">Send</button>
+                    </div>
                 </div>
-                <div class="typewriter" id="typewriter">The Next Generation of AI Agent</div>
-                <button class="btn btn-primary join-beta">Join BETA</button>
-            
             </div>
         </section>
 
@@ -109,7 +120,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
-                <div class="footer-logo">STUDENT AI</div>
+                <div class="footer-logo">FRIENDTOR</div>
             </div>
             
             <div class="footer-column">
@@ -136,5 +147,7 @@
     </footer>
     <script src="js/typewriter.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/chat-api.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>

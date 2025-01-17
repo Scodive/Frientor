@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const BASE_URL = 'http://172.16.30.26';
 
+    // CHAT 按钮跳转
+    const chatButtons = document.querySelectorAll('.chat-btn');
+    console.log('Found chat buttons:', chatButtons.length);
+    
+    chatButtons.forEach(button => {
+        console.log('Adding click listener to chat button');
+        button.addEventListener('click', () => {
+            console.log('Chat button clicked');
+            window.location.href = BASE_URL + '/chat.html';
+        });
+    });
+
     // Logo点击返回主页
     const logo = document.querySelector('.logo');
     if (logo) {
