@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const BASE_URL = 'http://172.16.30.26';
+    const BASE_URL = ''
     const form = document.getElementById('betaForm');
     
     form.addEventListener('submit', async (e) => {

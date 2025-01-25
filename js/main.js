@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const BASE_URL = 'http://172.16.30.26';
+    const BASE_URL = '';
 
     // CHAT 按钮跳转
     const chatButtons = document.querySelectorAll('.chat-btn');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Adding click listener to chat button');
         button.addEventListener('click', () => {
             console.log('Chat button clicked');
-            window.location.href = BASE_URL + '/chat.html';
+            window.location.href = 'chat.html';
         });
     });
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.addEventListener('click', () => {
-            window.location.href = BASE_URL + '/';
+            window.location.href = 'index.html';
         });
     }
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
     learnMoreBtns.forEach(button => {
         button.addEventListener('click', () => {
-            window.location.href = BASE_URL + '/learn-more.html';
+            window.location.href = 'learn-more.html';
         });
     });
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqButton = document.querySelector('.faq-btn');
     if (faqButton) {
         faqButton.addEventListener('click', () => {
-            window.location.href = BASE_URL + '/faq.html';
+            window.location.href = 'faq.html';
         });
     }
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const betaButtons = document.querySelectorAll('.join-beta');
     betaButtons.forEach(button => {
         button.addEventListener('click', () => {
-            window.location.href = BASE_URL + '/beta-signup.html';
+            window.location.href = 'beta-signup.html';
         });
     });
 }); 
