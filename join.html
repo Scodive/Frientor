@@ -80,7 +80,58 @@
                 otherInput.focus();
             }
         });
+
+        document.querySelector('.join-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // 收集表单数据
+            const formData = {
+                email: this.querySelector('input[type="email"]').value,
+                username: this.querySelector('input[type="text"]').value,
+                country: this.querySelector('select').value,
+                functions: [],
+                other_function: ''
+            };
+            
+            // 收集选中的功能
+            const checkboxes = this.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.value === 'other') {
+                    formData.other_function = document.getElementById('otherFunction').value;
+                } else {
+                    formData.functions.push(checkbox.value);
+                }
+            });
+            
+            // 在发送请求前添加日志
+            console.log('正在发送数据:', formData);
+
+            try {
+                const response = await fetch('http://14.103.64.62:8000/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                // 添加响应日志
+                console.log('收到响应:', await response.clone().json());
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('提交成功！');
+                    this.reset();
+                } else {
+                    alert('提交失败：' + result.message);
+                }
+            } catch (error) {
+                alert('提交出错：' + error.message);
+            }
+        });
     </script>
+    
 
     <section class="steps-section">
         <h2>Discover the possibilities</h2>
