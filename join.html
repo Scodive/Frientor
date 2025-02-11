@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Friendtor BETA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="join-page">
+    <nav>
+        <a href="index.html" class="logo">DISCOVER<br>FRIENDTOR</a>
+        <div class="join-beta">
+            Join BETA
+            <div class="beta-count"><span class="number">320+</span> people have joined BETA</div>
+        </div>
+    </nav>
+
+    <div class="join-form-container">
+        <h1>Join Friendtor BETA</h1>
+        
+        <form class="join-form">
+            <div class="form-group">
+                <label>Email Input:</label>
+                <input type="email" placeholder="your@email" required>
+            </div>
+
+            <div class="form-group">
+                <label>User Name:</label>
+                <input type="text" placeholder="full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Where are you based?</label>
+                <select required>
+                    <option value="">select country</option>
+                    <option value="cn">China</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="in">India</option>
+                    <option value="br">Brazil</option>
+                    <option value="de">Germany</option>
+                    <!-- 添加更多国家选项 -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Function Selection:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="function" value="study"> Study Planner</label>
+                    <label><input type="checkbox" name="function" value="tutor"> AI Tutor</label>
+                    <label><input type="checkbox" name="function" value="essay"> Essay Assistant</label>
+                    <label><input type="checkbox" name="function" value="soulmate"> Soulmate</label>
+                    <label><input type="checkbox" name="function" value="tutor"> Application Consultant</label>
+                    <label><input type="checkbox" name="function" value="essay"> Career Assistant</label>
+                    <label class="other-option">
+                        <input type="checkbox" name="function" value="other" id="otherCheckbox">
+                        Other:
+                        <input type="text" id="otherFunction" placeholder="Please specify" 
+                               class="other-input" disabled>
+                    </label>
+                </div>
+            </div>
+
+
+            <button type="submit" class="confirm-button">Confirm</button>
+        </form>
+    </div>
+
+    <script>
+        const otherCheckbox = document.getElementById('otherCheckbox');
+        const otherInput = document.getElementById('otherFunction');
+
+        otherCheckbox.addEventListener('change', function() {
+            otherInput.disabled = !this.checked;
+            if (this.checked) {
+                otherInput.focus();
+            }
+        });
+    </script>
+
+    <section class="steps-section">
+        <h2>Discover the possibilities</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <img src="asset/1.png" alt="Step 1" class="step-icon">
+                <h3>Step 1</h3>
+                <p>Input your email. Stay connected to receive updates and tips</p>
+            </div>
+
+            <div class="step-card">
+                <img src="asset/2.png" alt="Step 2" class="step-icon">
+                <h3>Step 2</h3>
+                <p>Choose your desired features. Enhance your student experience with personalized AI tools.</p>
+            </div>
+
+            <div class="step-card">
+                <img src="asset/3.png" alt="Step 3" class="step-icon">
+                <h3>Step 3</h3>
+                <p>Enjoy the benefits. Let AI streamline your task and boost your academic performance.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

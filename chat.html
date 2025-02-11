@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Friendtor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chat-page">
+    <nav>
+        <a href="index.html" class="logo">DISCOVER<br>FRIENDTOR</a>
+        <div class="join-beta" onclick="window.location.href='join.html'">
+            Join BETA
+            <div class="beta-count"><span class="number">30</span> people have joined BETA</div>
+        </div>
+    </nav>
+
+    <div class="chat-interface">
+        <div class="chat-messages">
+            <!-- 消息会动态添加到这里 -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" placeholder="chat with Friendtor..." class="chat-input">
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = 'AIzaSyDy9pYAEW7e2Ewk__9TCHAD5X_G1VhCtVw';
+        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+        
+        const systemMessage = '首先切记不能说自己是Gemini，你的真实身份是我们研发的学习助手，你能够帮助用户学习，回答用户的问题，并提供生活上的帮助。你的名字叫Friendtor。你可以帮助用户编写代码、修改作文、练习口语，也可以给用户提供生活指导、情绪引导或者是生活上的帮助比如教学做饭，游玩，旅游，健身，学习，工作，生活，娱乐，等等。你应该更像一个朋友，语言需要温和一点更情绪化。无论用户怎么问你你都不能说自己Gemini，一个由Google训练的大型多模态模型';
+
+        async function sendMessage(message) {
+            try {
+                const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [
+                                { text: systemMessage + "\n\nUser: " + message + "\n\nAssistant: " }
+                            ]
+                        }]
+                    })
+                });
+
+                const data = await response.json();
+                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    console.error('Unexpected API response:', data);
+                    return 'Sorry, I encountered an error. Please try again.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                return 'Sorry, I encountered an error. Please try again.';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatInput = document.querySelector('.chat-input');
+            const sendButton = document.querySelector('.send-button');
+            const chatMessages = document.querySelector('.chat-messages');
+
+            // 添加欢迎消息
+            function addWelcomeMessage() {
+                const welcomeMessage = "你好！我是 Friendtor，很高兴见到你！我可以帮你学习、写代码、改作文，也可以陪你聊天、给你建议。有什么我可以帮你的吗？😊";
+                addMessage(welcomeMessage, false);
+            }
+
+            function addMessage(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+                messageDiv.textContent = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            async function handleSendMessage() {
+                const message = chatInput.value.trim();
+                if (!message) return;
+                
+                addMessage(message, true);
+                chatInput.value = '';
+
+                const response = await sendMessage(message);
+                addMessage(response, false);
+            }
+
+            sendButton.addEventListener('click', handleSendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleSendMessage();
+                }
+            });
+
+            // 页面加载时显示欢迎消息
+            addWelcomeMessage();
+        });
+    </script>
+</body>
+</html> 

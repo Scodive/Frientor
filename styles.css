@@ -1,0 +1,907 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #000033 0%, #000000 35%, #000000 65%, #000033 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background-triangle {
+    display: none;
+}
+
+/* 添加白色光晕效果 */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200vw;
+    height: 200vw;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 60%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.join-beta {
+    text-align: right;
+    font-weight: 900;
+}
+
+.beta-count {
+    background: #2200cc;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.beta-count .number {
+    color: #ff4444;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+main {
+    max-width: 1200px;
+    margin: 3rem auto 12rem;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+}
+
+/* 聊天容器 */
+.chat-container {
+    
+    border: 1px solid #2200cc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.chat-messages {
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #2200cc;
+    color: white;
+    margin-left: auto;
+    border-radius: 15px;
+}
+
+.bot-message {
+    background: rgba(34, 0, 204, 0.2);
+    color: white;
+    margin-right: auto;
+}
+
+
+/* 聊天输入框 */
+.chat-input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 51, 0.5); /* 更深的背景色 */
+    color: white;
+    font-size: 1rem;
+}
+
+
+.chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 发送按钮 */
+.send-button {
+    background: #4400ff; /* 更亮的蓝色用于按钮 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* 聊天输入容器 */
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button.join-beta-main {
+    background: white !important;
+    color: #2200cc !important;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    z-index: 10; /* 确保按钮在其他元素之上 */
+}
+
+button.join-beta-main:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-2px);
+}
+
+.video-section {
+    background: linear-gradient(180deg, #000033 0%, #000000 35%, #000000 65%, #000033 100%);
+    margin-top: -100px;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid #4400ff;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.features-section {
+    background: linear-gradient(180deg, #000033 0%, #000000 35%, #000000 65%, #000033 100%);
+    margin-top: -100px;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 添加十字交叉线 */
+.features-grid::before,
+.features-grid::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 垂直线 */
+.features-grid::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 水平线 */
+.features-grid::after {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.feature-card {
+    background: rgba(0, 0, 51, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #2200cc;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .video-section h2 {
+        font-size: 2rem;
+    }
+    
+    .video-wrapper {
+        border-radius: 12px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-section h2 {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    /* 在移动端隐藏十字交叉线 */
+    .features-grid::before,
+    .features-grid::after {
+        display: none;
+    }
+}
+
+.roles-section {
+    background: linear-gradient(180deg, #000033 0%, #000000 35%, #000000 65%, #000033 100%);
+    margin-top: -100px;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+}
+
+.roles-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.role-card {
+    background: rgba(0, 0, 51, 0.5);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+}
+
+.role-icon {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+.role-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.role-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 为两个部分添加不同的背景渐变 */
+.roles-section.academics {
+    background: #000000;
+}
+
+.roles-section.life {
+    background: #000000;
+}
+
+@media (max-width: 1024px) {
+    .roles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .roles-section h2 {
+        font-size: 2rem;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .role-card {
+        padding: 1.5rem;
+    }
+
+    .role-icon {
+        height: 100px;
+    }
+}
+
+/* 消息部分背景渐变 */
+.messages-section {
+    background: linear-gradient(180deg, #000033 0%, #000000 35%, #000000 65%, #000033 100%);
+    margin-top: -100px;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 4rem;
+}
+
+.messages-container {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    width: 100%;
+}
+
+.message-bubble {
+    background: rgba(68, 0, 255, 0.2);
+    border: 1px solid #4400ff;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    margin: 1.5rem auto;
+    max-width: 80%;
+    position: relative;
+    text-align: left;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.message-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    background: inherit;
+    border-right: 1px solid #4400ff;
+    border-bottom: 1px solid #4400ff;
+}
+
+.message-bubble.right {
+    margin-left: auto;
+    margin-right: 2rem;
+    border-bottom-right-radius: 5px;
+}
+
+.message-bubble.right::after {
+    right: -10px;
+    transform: rotate(-45deg);
+    border-top: 1px solid #4400ff;
+    border-left: none;
+    border-bottom: none;
+}
+
+.message-bubble.left {
+    margin-right: auto;
+    margin-left: 2rem;
+    border-bottom-left-radius: 5px;
+}
+
+.message-bubble.left::after {
+    left: -10px;
+    transform: rotate(45deg);
+    border-top: 1px solid #4400ff;
+    border-right: none;
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .messages-container {
+        padding: 0 1rem;
+    }
+
+    .message-bubble {
+        max-width: 90%;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+.footer {
+    background: linear-gradient(180deg, #000033 0%, #000000 100%);
+    margin-top: -100px;
+    padding: 8rem 2rem 4rem;
+    color: white;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-column {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer {
+        padding: 2rem 1rem;
+    }
+}
+
+/* 为所有 Join BETA 按钮添加链接样式 */
+.join-beta, .join-beta-main {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+/* 注册页面样式 */
+.join-page {
+    background: #000033;
+    min-height: 100vh;
+}
+
+.join-form-container {
+    max-width: 800px;
+    margin: -3rem auto 2rem;
+    padding: 0 2rem;
+}
+
+.join-form-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #4400ff;
+    background: rgba(0, 0, 51, 0.5);
+    color: white;
+    font-size: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.confirm-button {
+    background: #4400ff;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0rem auto;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+    background: #3300cc;
+}
+
+.other-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.other-input {
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #4400ff;
+    background: rgba(0, 0, 51, 0.5);
+    color: white;
+    font-size: 0.9rem;
+    width: 150px;
+}
+
+.other-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-group select {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #4400ff;
+    background: rgba(0, 0, 51, 0.5);
+    color: white;
+    font-size: 1rem;
+    appearance: none; /* 移除默认的下拉箭头 */
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234400ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+    padding-right: 3rem;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #6633ff;
+    box-shadow: 0 0 0 3px rgba(68, 0, 255, 0.2);
+}
+
+.form-group select option {
+    background-color: #000033;
+    color: white;
+    padding: 1rem;
+}
+
+.form-group select:hover {
+    border-color: #6633ff;
+}
+
+/* 添加一个微妙的过渡效果 */
+.form-group select {
+    transition: all 0.3s ease;
+}
+
+/* 当选择框打开时的样式 */
+.form-group select:active,
+.form-group select:focus {
+    transform: translateY(-1px);
+}
+
+/* 聊天页面的样式 */
+.chat-page {
+    background: #000033;
+    min-height: 100vh;
+}
+
+.chat-interface {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: rgba(0, 0, 51, 0.3);
+    border: 1px solid #4400ff;
+    border-radius: 20px;
+}
+
+.chat-messages {
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: #4400ff;
+    color: white;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: rgba(68, 0, 255, 0.2);
+    color: white;
+    margin-right: auto;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid rgba(68, 0, 255, 0.3);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0, 0, 51, 0.5);
+    color: white;
+    font-size: 1rem;
+}
+
+.send-button {
+    background: #4400ff;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* 在 join 页面的步骤卡片样式 */
+.join-page .steps-section {
+    margin-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.join-page .steps-container {
+    margin-top: 3rem;
+}
+
+.join-page .step-card {
+    background: rgba(0, 0, 51, 0.3);
+    border: 1px solid #4400ff;
+    transition: transform 0.3s ease;
+}
+
+.join-page .step-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 确保步骤说明在表单下方有足够间距 */
+.join-form-container {
+    margin-bottom: 4rem;
+}
+
+.steps-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.steps-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 改为三列布局 */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.step-card {
+    background: rgba(0, 0, 51, 0.3);
+    border: 1px solid #4400ff;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step-icon {
+    width: 180px; /* 增加宽度 */
+    height: 120px; /* 保持原有高度 */
+    margin-bottom: 1.5rem;
+    object-fit: contain; /* 确保图片保持比例 */
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.step-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .step-icon {
+        width: 150px;
+        height: 100px;
+    }
+    .steps-container {
+        grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+    }
+    
+    .steps-section h2 {
+        font-size: 2rem;
+    }
+}
+
+.language-switch {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: rgba(68, 0, 255, 0.3);
+    border: 1px solid #4400ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(68, 0, 255, 0.5);
+} 

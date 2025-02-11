@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISCOVER FRIENDTOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="language-switch">
+        <button class="lang-btn" onclick="switchLanguage()" id="langBtn">中文</button>
+    </div>
+    <div class="background-triangle"></div>
+    
+    <nav>
+        <a href="index.html" class="logo">DISCOVER<br>FRIENDTOR</a>
+        <div class="join-beta" onclick="window.location.href='join.html'">
+            Join BETA
+            <div class="beta-count"><span class="number">320+</span> people have joined BETA</div>
+        </div>
+    </nav>
+
+    <main>
+        <h1>The Next Generation AI Companion for Students</h1>
+        <p class="subtitle">
+            Friendtor isn't just an AI agent—it's your study buddy, career coach, emotional confidant, and more.<br>
+            Available anytime, anywhere, Friendtor supports you across academics, life, and everything in between.
+        </p>
+
+        <div class="chat-container">
+            <div class="chat-messages" style="display: none;">
+                <!-- 消息会动态添加到这里 -->
+            </div>
+            <div class="chat-input-container" onclick="window.location.href='chat.html'">
+                <input type="text" placeholder="chat with Friendtor..." class="chat-input" readonly>
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+
+        <button class="join-beta-main" onclick="window.location.href='join.html'">Join BETA</button>
+    </main>
+
+    <section class="video-section">
+        <h2>What is Friendtor?</h2>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="asset/newdemp.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <button class="join-beta-main" onclick="window.location.href='join.html'">Join BETA</button>
+    </section>
+
+    <section class="features-section">
+        <h2>Why Choose Friendtor?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Proven Expertise</h3>
+                <p>Backed by 16 years of experience serving a global community of millions of students, Friendtor combines deep educational insights with advanced AI capabilities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>State-of-the-Art AI</h3>
+                <p>Leveraging ELISA, Friendtor provides nuanced support in academics, career planning, and emotional well-being, delivering a truly tailored experience.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Intelligent Memory</h3>
+                <p>Friendtor remembers your preferences, progress, and goals, offering consistent and personalized guidance that adapts to your evolving needs.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>A True Companion</h3>
+                <p>More than just a tool, Friendtor builds a meaningful connection with you, providing warmth, empathy, and encouragement to help you thrive.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="roles-section academics">
+        <h2>Academics</h2>
+        <div class="roles-grid">
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/coder.png" alt="Coder">
+                </div>
+                <h3>Coder</h3>
+                <p>Debug, learn to code, and master algorithms effortlessly</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/editor.png" alt="Editor">
+                </div>
+                <h3>Editor</h3>
+                <p>Improve essays, refine grammar, and enhance your writing</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/tutor.png" alt="Tutor">
+                </div>
+                <h3>Tutor</h3>
+                <p>Break down complex concepts and excel in exams</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/consultant.png" alt="Consultant">
+                </div>
+                <h3>Consultant</h3>
+                <p>Navigate applications with tailored guidance</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="roles-section life">
+        <h2>Life</h2>
+        <div class="roles-grid">
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/planner.png" alt="Planner">
+                </div>
+                <h3>Planner</h3>
+                <p>Organize tasks, set reminders, and stay on schedule</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/soulmate.png" alt="Soulmate">
+                </div>
+                <h3>Soulmate</h3>
+                <p>Get emotional support and share your thoughts freely</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/foodbuddy.png" alt="FoodBuddy">
+                </div>
+                <h3>FoodBuddy</h3>
+                <p>Explore recipes and learn to cook with ease</p>
+            </div>
+
+            <div class="role-card">
+                <div class="role-icon">
+                    <img src="asset/coach.png" alt="Coach">
+                </div>
+                <h3>Coach</h3>
+                <p>Plan your career, craft resumes, and ace interviews</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="messages-section">
+        <div class="messages-container">
+            <div class="message-bubble right">
+                Friendtor: Your partner in growth, from coding to career.
+            </div>
+            <div class="message-bubble left">
+                Learning is no longer alone, Friendtor will accompany you from zero to one
+            </div>
+            <div class="message-bubble right">
+                Whether it is code or composition, Friendtor can help you get it!
+            </div>
+            <div class="message-bubble left">
+                "FriendTor, not just an assistant, but also your friend!"
+            </div>
+            <div class="message-bubble right">
+                From learning to life, Friendtor is ubiquitous, answer it for you at any time!
+            </div>
+        </div>
+        <button class="join-beta-main" onclick="window.location.href='join.html'">Join BETA</button>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>FRIENDTOR</h3>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Academic</h3>
+                <ul>
+                    <li><a href="#">Study group</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">ResearchGate</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Get support</h3>
+                <ul>
+                    <li><a href="#">Collaborate with us</a></li>
+                    <li><a href="#">Join our network</a></li>
+                    <li><a href="#">Subscribe for updates</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Explore insights</h3>
+                <ul>
+                    <li><a href="#">Purchase subscription</a></li>
+                    <li><a href="#">Find study resources</a></li>
+                    <li><a href="#">Discount on first</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const API_KEY = 'AIzaSyDy9pYAEW7e2Ewk__9TCHAD5X_G1VhCtVw';
+    const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+
+    async function sendMessage(message) {
+        try {
+            const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: message
+                        }]
+                    }]
+                })
+            });
+
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text;
+        } catch (error) {
+            console.error('Error:', error);
+            return 'Sorry, I encountered an error. Please try again.';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatInput = document.querySelector('.chat-input');
+        const sendButton = document.querySelector('.send-button');
+        const chatMessages = document.querySelector('.chat-messages');
+        const chatContainer = document.querySelector('.chat-container');
+
+        function addMessage(message, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function handleSendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // 显示消息区域
+            chatMessages.style.display = 'block';
+            
+            // 添加用户消息
+            addMessage(message, true);
+            chatInput.value = '';
+
+            // 获取AI响应
+            const response = await sendMessage(message);
+            addMessage(response, false);
+        }
+
+        sendButton.addEventListener('click', handleSendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSendMessage();
+            }
+        });
+    });
+
+    const translations = {
+        en: {
+            logo_text: 'DISCOVER<br>FRIENDTOR',
+            nav_join: 'Join BETA',
+            nav_beta_count: '320+ people have joined BETA',
+            main_title: 'The Next Generation AI Companion for Students',
+            main_subtitle: 'Friendtor isn\'t just an AI agent—it\'s your study buddy, career coach, emotional confidant, and more.\nAvailable anytime, anywhere, Friendtor supports you across academics, life, and everything in between.',
+            chat_placeholder: 'chat with Friendtor...',
+            video_title: 'What is Friendtor?',
+            features_title: 'Why Choose Friendtor?',
+            academics_title: 'Academics',
+            life_title: 'Life',
+            feature1_title: 'Proven Expertise',
+            feature1_text: 'Backed by 16 years of experience serving a global community of millions of students, Friendtor combines deep educational insights with advanced AI capabilities.',
+            feature2_title: 'State-of-the-Art AI',
+            feature2_text: 'Leveraging ELISA, Friendtor provides nuanced support in academics, career planning, and emotional well-being, delivering a truly tailored experience.',
+            feature3_title: 'Intelligent Memory',
+            feature3_text: 'Friendtor remembers your preferences, progress, and goals, offering consistent and personalized guidance that adapts to your evolving needs.',
+            feature4_title: 'A True Companion',
+            feature4_text: 'More than just a tool, Friendtor builds a meaningful connection with you, providing warmth, empathy, and encouragement to help you thrive.',
+            message1: 'Friendtor: Your partner in growth, from coding to career.',
+            message2: 'Learning is no longer alone, Friendtor will accompany you from zero to one',
+            message3: 'Whether it is code or composition, Friendtor can help you get it!',
+            message4: 'FriendTor, not just an assistant, but also your friend!',
+            message5: 'From learning to life, Friendtor is ubiquitous, answer it for you at any time!',
+            join_beta: 'Join BETA',
+            send_button: 'Send',
+            role_coder: 'Coder',
+            role_coder_desc: 'Debug, learn to code, and master algorithms effortlessly',
+            role_editor: 'Editor',
+            role_editor_desc: 'Improve essays, refine grammar, and enhance your writing',
+            role_tutor: 'Tutor',
+            role_tutor_desc: 'Break down complex concepts and excel in exams',
+            role_consultant: 'Consultant',
+            role_consultant_desc: 'Navigate applications with tailored guidance',
+            life_section_title: 'Life Assistant',
+            role_planner: 'Planner',
+            role_planner_desc: 'Organize tasks, set reminders, and stay on schedule',
+            role_soulmate: 'Soulmate',
+            role_soulmate_desc: 'Get emotional support and share your thoughts freely',
+            role_foodbuddy: 'FoodBuddy',
+            role_foodbuddy_desc: 'Explore recipes and learn to cook with ease',
+            role_coach: 'Coach',
+            role_coach_desc: 'Plan your career, craft resumes, and ace interviews'
+        },
+        zh: {
+            logo_text: '探索<br>FRIENDTOR',
+            nav_join: '加入测试',
+            nav_beta_count: '320+ 人已加入测试',
+            main_title: '新一代学生AI伴侣',
+            main_subtitle: 'Friendtor不仅仅是AI助手——它是你的学习伙伴、职业教练、情感知己。\n随时随地为你提供支持，无论是学业、生活还是其他方面。',
+            chat_placeholder: '和 Friendtor 聊天...',
+            video_title: '什么是 Friendtor？',
+            features_title: '为什么选择 Friendtor？',
+            academics_title: '学术支持',
+            life_title: '生活助手',
+            feature1_title: '专业经验',
+            feature1_text: '凭借16年服务全球数百万学生的经验，Friendtor将深厚的教育洞察与先进的AI技术相结合。',
+            feature2_title: '尖端AI技术',
+            feature2_text: '基于ELISA技术，Friendtor在学业、职业规划和情感支持方面提供细致入微的帮助，带来真正个性化的体验。',
+            feature3_title: '智能记忆',
+            feature3_text: 'Friendtor会记住你的偏好、进度和目标，提供持续且个性化的指导，适应你不断发展的需求。',
+            feature4_title: '真诚伙伴',
+            feature4_text: '不仅仅是工具，Friendtor致力于与你建立有意义的连接，提供温暖、理解和鼓励，帮助你成长。',
+            message1: 'Friendtor：你的成长伙伴，从编程到职业发展。',
+            message2: '学习不再孤单，Friendtor陪你从零到一',
+            message3: '无论是代码还是写作，Friendtor都能帮你搞定！',
+            message4: 'Friendtor，不只是助手，更是你的朋友！',
+            message5: '从学习到生活，Friendtor无处不在，随时为你解答！',
+            join_beta: '加入测试',
+            send_button: '发送',
+            role_coder: '编程导师',
+            role_coder_desc: '调试代码、学习编程、轻松掌握算法',
+            role_editor: '写作助手',
+            role_editor_desc: '改进文章、优化语法、提升写作水平',
+            role_tutor: '学习导师',
+            role_tutor_desc: '分解复杂概念、助你考试成功',
+            role_consultant: '申请顾问',
+            role_consultant_desc: '为你的申请提供专业指导',
+            life_section_title: '生活助手',
+            role_planner: '规划助手',
+            role_planner_desc: '安排任务、设置提醒、保持日程有序',
+            role_soulmate: '知心好友',
+            role_soulmate_desc: '提供情感支持、分享心事想法',
+            role_foodbuddy: '美食伙伴',
+            role_foodbuddy_desc: '探索菜谱、轻松学习烹饪',
+            role_coach: '职业教练',
+            role_coach_desc: '规划职业、完善简历、助你面试成功'
+        }
+    };
+
+    let currentLang = 'en';
+
+    function switchLanguage() {
+        currentLang = currentLang === 'en' ? 'zh' : 'en';
+        const langBtn = document.getElementById('langBtn');
+        langBtn.textContent = currentLang === 'en' ? '中文' : 'EN';
+        updateContent();
+    }
+
+    function updateContent() {
+        const t = translations[currentLang];
+        
+        // 更新 logo 文本
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.innerHTML = t.logo_text;
+        }
+        
+        // 更新导航栏
+        const joinBeta = document.querySelector('.join-beta');
+        if (joinBeta) {
+            joinBeta.childNodes[0].textContent = t.nav_join;
+        }
+        
+        // 更新beta人数
+        const betaCount = document.querySelector('.beta-count');
+        if (betaCount) {
+            betaCount.innerHTML = `<span class="number">320+</span> ${t.nav_beta_count.split('320+')[1]}`;
+        }
+        
+        // 更新主标题和副标题
+        const mainTitle = document.querySelector('main h1');
+        const mainSubtitle = document.querySelector('main .subtitle');
+        if (mainTitle) mainTitle.textContent = t.main_title;
+        if (mainSubtitle) mainSubtitle.innerHTML = t.main_subtitle.replace('\n', '<br>');
+        
+        // 更新聊天输入框占位符
+        const chatInput = document.querySelector('.chat-input');
+        if (chatInput) chatInput.placeholder = t.chat_placeholder;
+        
+        // 更新视频标题
+        const videoTitle = document.querySelector('.video-section h2');
+        if (videoTitle) videoTitle.textContent = t.video_title;
+        
+        // 更新特性部分标题
+        const featuresTitle = document.querySelector('.features-section h2');
+        if (featuresTitle) featuresTitle.textContent = t.features_title;
+        
+        // 更新特性卡片
+        const featureCards = document.querySelectorAll('.feature-card');
+        if (featureCards.length >= 4) {
+            featureCards[0].querySelector('h3').textContent = t.feature1_title;
+            featureCards[0].querySelector('p').textContent = t.feature1_text;
+            featureCards[1].querySelector('h3').textContent = t.feature2_title;
+            featureCards[1].querySelector('p').textContent = t.feature2_text;
+            featureCards[2].querySelector('h3').textContent = t.feature3_title;
+            featureCards[2].querySelector('p').textContent = t.feature3_text;
+            featureCards[3].querySelector('h3').textContent = t.feature4_title;
+            featureCards[3].querySelector('p').textContent = t.feature4_text;
+        }
+        
+        // 更新学术和生活部分标题
+        const academicsTitle = document.querySelector('.academics h2');
+        const lifeTitle = document.querySelector('.life h2');
+        if (academicsTitle) academicsTitle.textContent = t.academics_title;
+        if (lifeTitle) lifeTitle.textContent = t.life_title;
+        
+        // 更新消息部分
+        const messages = document.querySelectorAll('.message-bubble');
+        if (messages.length >= 5) {
+            messages[0].textContent = t.message1;
+            messages[1].textContent = t.message2;
+            messages[2].textContent = t.message3;
+            messages[3].textContent = t.message4;
+            messages[4].textContent = t.message5;
+        }
+        
+        // 更新所有加入测试按钮
+        document.querySelectorAll('.join-beta-main').forEach(button => {
+            button.textContent = t.join_beta;
+        });
+
+        // 更新发送按钮文本
+        const sendButton = document.querySelector('.send-button');
+        if (sendButton) {
+            sendButton.textContent = t.send_button;
+        }
+
+        // 更新生活助手标题
+        const lifeSectionTitle = document.querySelector('.life h2');
+        if (lifeSectionTitle) {
+            lifeSectionTitle.textContent = t.life_section_title;
+        }
+        
+        // 更新所有角色卡片
+        const roleCards = document.querySelectorAll('.role-card');
+        if (roleCards) {
+            // 学术支持角色
+            const academicRoles = ['coder', 'editor', 'tutor', 'consultant'];
+            academicRoles.forEach((role, index) => {
+                const card = roleCards[index];
+                if (card) {
+                    card.querySelector('h3').textContent = t[`role_${role}`];
+                    card.querySelector('p').textContent = t[`role_${role}_desc`];
+                }
+            });
+            
+            // 生活助手角色
+            const lifeRoles = ['planner', 'soulmate', 'foodbuddy', 'coach'];
+            lifeRoles.forEach((role, index) => {
+                const card = roleCards[index + 4];
+                if (card) {
+                    card.querySelector('h3').textContent = t[`role_${role}`];
+                    card.querySelector('p').textContent = t[`role_${role}_desc`];
+                }
+            });
+        }
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', () => {
+        updateContent();
+    });
+    </script>
+</body>
+</html> 
