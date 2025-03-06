@@ -1,8 +1,8 @@
-# Friendtor - AI Learning Companion
+# Frientor - AI Learning Companion
 Next Generation AI Agent
 
 
-Friendtor 是一个智能学习伴侣平台，旨在为学生提供全方位的学习和生活支持。从学术辅导到生活规划，Friendtor 都能为你提供专业的帮助。
+Frientor 是一个智能学习伴侣平台，旨在为学生提供全方位的学习和生活支持。从学术辅导到生活规划，Friendtor 都能为你提供专业的帮助。
 
 ## 🌟 主要特点
 
